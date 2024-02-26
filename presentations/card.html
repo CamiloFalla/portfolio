@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic of html</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Ajusta el espacio entre las secciones */
+        }
+        
+        .section {
+            flex: 0 1 calc(25.33% - 25px); /* Ajuste para que no más de 3 secciones por fila */
+            min-width: 200px; /* Ajusta el mínimo ancho de cada sección para responsividad */
+            background-color: #f0f0f0; /* Fondo claro para cada sección */
+            padding: 20px; /* Espaciado interno para cada sección */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+        }
+        
+        .section h2 {
+            margin-top: 0;
+        }
+        
+        ul {
+            list-style-type: none; /* Elimina los bullets de las listas */
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 5px; /* Espaciado entre elementos de lista */
+        }
+        
+        /* Opcional: Añade estilos adicionales para mejorar la visibilidad */
+        body {
+            font-family: Arial, sans-serif; /* Fuente más legible */
+            margin: 20px; /* Añade algo de margen al cuerpo de la página */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+             
+        h1, h3 {
+            margin: 0 0 10px 0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Etiquetas</h1> 
+    </header>
+    <nav>
+        <div class="container">
+            <div class="section">
+                <h2>LAYOUT</h2>
+                <ul>
+                    <li>Header</li>
+                    <li>nav</li>
+                    <li>section</li>
+                    <li>article</li>
+                    <li>aside</li>
+                    <li>footer</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2>ENLACES</h2>
+                <ul>
+                    <li>a</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2>TEXTOS</h2>
+                <ul>
+                    <li>h1 ... h6</li>
+                    <li>p</li>
+                    <li>span</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2>IMAGENES Y VIDEO</h2>
+                <ul>
+                    <li>img</li>
+                    <li>svg</li>
+                    <li>iframe</li>
+                    <li>video</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2>FORMULARIOS</h2>
+                <ul>
+                    <li>form</li>
+                    <li>input</li>
+                    <li>label</li>
+                    <li>button</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2>LISTAS</h2>
+                <ul>
+                    <li>ul</li>
+                    <li>li</li>
+                    <li>ol</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>SELECTORES</h1>
+        <nav class="grid-container">
+            <div class="grid-item">
+                <h3>DE TIPO</h3>
+                <ul>
+                    <li>div {...}</li>
+                </ul>
+            </div>
+    
+            <div class="grid-item">
+                <h3>DE CLASE</h3>
+                <ul>
+                    <li>.elemento {...}</li>
+                </ul>
+            </div>
+    
+            <div class="grid-item">
+                <h3>DE ID</h3>
+                <ul>
+                    <li>#id-del-elemento</li>
+                </ul>
+            </div>
+    
+            <div class="grid-item">
+                <h3>DE ATRIBUTO</h3>
+                <ul>
+                    <li>a[href="..."]{...}</li>
+                </ul>
+            </div>
+    
+            <div class="grid-item">
+                <h3>UNIVERSAL</h3>
+                <ul>
+                    <li>* {...}</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+       
+    
+</body>
+</html>

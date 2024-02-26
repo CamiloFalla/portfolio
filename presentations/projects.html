@@ -15,6 +15,16 @@
         a[href="https://camilofalla.github.io"]{
             color: #fff;
         }
+        .circular-image {
+            width: 150px; /* Ancho de la imagen */
+            height: 150px; /* Altura de la imagen */
+            border-radius: 50%; /* Hace que la imagen sea completamente circular */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+            /* object-position: center; */ /* Centra la parte de la imagen que quieres mostrar, útil si object-fit: cover no da el resultado deseado solo */
+            display: block; /* Opcional: para remover cualquier espacio extra alrededor de la imagen en línea */
+            overflow: hidden; /* Asegura que no se muestre nada fuera del círculo */
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -41,7 +51,7 @@
         </ul> 
     </header>
     <section>
-        <img src="images/pictures/programmer.jpg" alt="Programador">
+        <img src="images/pictures/programmer.jpg" alt="Programador" class="circular-image">
 
         <div>
             <h4>Mateman</h4>
