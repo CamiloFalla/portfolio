@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+  <path d="M110,100 Q90,130 110,160" fill="none" stroke="#0A3D91" stroke_width="14"/>
+  <path d="M390,100 Q410,130 390,160" fill="none" stroke="#0A3D91" stroke_width="14"/>
+  <rect x="200" y="115" width="25" height="25" fill="#D32F2F"/>
+  <rect x="235" y="105" width="25" height="25" fill="#0A3D91"/>
+  <rect x="270" y="125" width="25" height="25" fill="#D32F2F"/>
+  <text x="110" y="220" fill="#0A3D91" font_size="28" font_family="Arial" font_weight="bold">Camilo A Falla</text>
+  <text x="160" y="255" fill="#0A3D91" font_size="18" font_family="Arial">Your Tagline Here</text>
+</svg>

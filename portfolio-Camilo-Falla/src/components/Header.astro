@@ -1,0 +1,64 @@
+---
+const logoPath = "/logo/tech_logo_camilo_a_falla.svg";
+import "../styles/global.css"
+---
+
+<header class="max-w-[1440px] mx-auto p-4 flex justify-between items-center bg-background border-b border-gray-300">
+    <!-- Logo SVG a la izquierda -->
+    <div class="w-auto h-[30px]">
+        <img src={logoPath} alt="Camilo A Falla Logo" class="logo-image w-[150px] max-w-full h-auto" />
+    </div>
+
+    <!-- Menú de navegación en el centro -->
+    <nav class="nav hidden md:flex gap-3 items-center">
+        <a href="#about" class="text-info hover:text-secondary no-underline font-bold">About Me</a>
+        <a href="#portfolio" class="text-info hover:text-secondary no-underline font-bold">Portfolio</a>
+        <a href="#experience" class="text-info hover:text-secondary no-underline font-bold">Experience</a>
+    </nav>
+
+    <!-- Botones de contacto a la derecha -->
+    <div class="contact-buttons hidden md:flex gap-2 items-center">
+        <a href="#contact" class="text-sm font-semibold bg-primary hover:saturate-200 transition text-white rounded-full px-4 py-1">Contact Me</a>
+
+        <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline mb-2 transition duration-300">
+            <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
+            <span></span>
+        </a>
+    </div>
+
+    <!-- Menú hamburguesa para dispositivos móviles -->
+    <div
+        id="hamburger-menu"
+        class="md:hidden flex flex-col gap-1 cursor-pointer"
+        onclick="toggleMenu()"
+    >
+        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
+        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
+        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
+    </div>
+</header>
+
+<!-- Menú móvil -->
+<div
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-16 left-0 w-full bg-white shadow-lg p-4"
+>
+    <nav class="flex flex-col gap-4">
+        <a href="#about" class="text-info hover:text-secondary no-underline font-bold cursor-pointer">About Me</a>
+        <a href="#portfolio" class="text-info hover:text-secondary no-underline font-bold">Portfolio</a>
+        <a href="#experience" class="text-info hover:text-secondary no-underline font-bold">Experience</a>
+        <a href="#contact" class="text-info hover:text-secondary no-underline font-bold">Contact Me</a>
+        <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline mb-2 transition duration-300">
+            <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
+            <span></span>
+        </a>
+    </nav>
+</div>
+
+<!-- Script para manejar el menú hamburguesa -->
+<script client:load>
+    function toggleMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+    }
+</script>
