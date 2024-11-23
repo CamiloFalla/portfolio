@@ -1,0 +1,32 @@
+---
+const SHORTCUTS = [
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/camilo-falla/',
+        icon: 'fab fa-linkedin-in'  // Clases de Font Awesome para LinkedIn
+    },
+    {
+        label: 'GitHub',
+        href: 'https://github.com/CamiloFalla',
+        icon: 'fab fa-github'       // Clases de Font Awesome para GitHub
+    },
+    {
+        label: 'Strava',
+        href: 'https://www.strava.com/athletes/68694060',
+        icon: 'fab fa-strava'       // Clases de Font Awesome para Strava
+    }
+];
+---
+
+<section>
+    <h4 class="text-center pt-8 pb-4">Me puedes encontrar en:</h4>
+    <div class="flex flex-wrap gap-4 justify-center pb-8">
+        {SHORTCUTS.map(({ label, href, icon }) => (
+            <a href={href} target="_blank" rel="noopener noreferrer" 
+               class="bg-white rounded-full p-4 text-primary hover:bg-secondary transition duration-300">
+                <i class={`${icon} text-xl`} aria-hidden="true"></i>  <!-- Ícono con Font Awesome -->
+                <span class="sr-only">{label}</span> <!-- Texto oculto para accesibilidad -->
+            </a>
+        ))}
+    </div>
+</section>

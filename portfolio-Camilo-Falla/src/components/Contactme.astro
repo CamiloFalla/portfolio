@@ -1,0 +1,52 @@
+---
+---
+
+<div
+  id="contact-modal"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+>
+  <div class="bg-white rounded-lg w-full max-w-4xl p-4 md:p-8 relative">
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none text-2xl"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col md:flex-row">
+      <!-- Información -->
+      <div class="w-full md:w-1/3 mb-6 md:mb-0">
+        <h2 class="text-2xl font-semibold mb-4 text-center md:text-left">Contact Me</h2>
+        <div class="text-gray-700">
+          <p>Name: Camilo Falla</p>
+          <p>Email: <a href="mailto:camiloafalla@gmail.com" class="text-primary hover:underline">camiloafalla@gmail.com</a></p>
+          <p>Phone: <a href="tel:+573114935020" class="text-primary hover:underline">+57 311 493 5020</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("contact-modal");
+    const closeModal = document.getElementById("close-modal");
+
+    // Verificar la existencia de los elementos
+    if (!modal || !closeModal) {
+      console.error("Modal o botón de cierre no encontrados.");
+      return;
+    }
+
+    // Evento para cerrar el modal
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    // Cerrar modal al hacer clic fuera de él
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  });
+</script>

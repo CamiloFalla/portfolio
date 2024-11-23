@@ -1,0 +1,68 @@
+---
+const projects = [
+  {
+    title: "Sistema de Citas Médicas",
+    description: "Aplicación para agendar y gestionar citas médicas.",
+    technologies: ["React", "Node.js", "MongoDB"],
+    image: "/images/citasmedicas.png",
+    url: "https://citas-medicas.camilo.dev",
+    urlgit: "",
+  },
+  {
+    title: "Mateman",
+    description: "Mateman juego con el que vas aprendiendo!",
+    technologies: ["React", "Tailwind CSS"],
+    image: "/images/mateman.png",
+    url: "https://exquisite-lebkuchen-87cdd0.netlify.app/",
+    urlgit: "https://github.com/CamiloFalla/MATEMAN"
+  },
+  {
+    title: "Portafolio Personal",
+    description: "Mi portafolio con Astro y Tailwind.",
+    technologies: ["Astro", "Tailwind CSS"],
+    image: "/images/portfolio.png",
+    url: "https://portfolio.camilo.dev",
+    urlgit: "https://github.com/CamiloFalla/portfolio",
+  },
+  {
+    title: "Aplicación Servicios Medicos",
+    description: "Solucion pra IPS para control de Procesos",
+    technologies: ["React", "Boostrap"],
+    image: "/images/ipsmedico.png",
+    url: "https://camilofalla.github.io/frontendpoli/",
+    urlgit: "https://github.com/CamiloFalla/frontendpoli",
+  },
+];
+---
+
+<section id="projects" class="py-16 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-6">Proyectos</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {projects.map((project) => (
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div class="w-full h-48 flex justify-center items-center bg-gray-100">
+            <img src={project.image} alt={project.title} class="h-full object-contain" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-left">{project.title}</h3>
+            <p class="text-gray-600 text-left">{project.description}</p>
+            <div class="mt-4 flex flex-wrap justify-center gap-2">
+              {project.technologies.map((tech) => (
+                <span class="bg-primary text-white text-sm px-3 py-1 rounded">{tech}</span>
+              ))}
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+              <a href={project.url} target="_blank" class="text-secondary font-semibold hover:underline">
+                Ver Proyecto →
+              </a>
+              <a href={project.urlgit} target="_blank" class="text-secondary font-semibold hover:underline">
+                Github →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

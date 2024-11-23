@@ -1,64 +1,140 @@
 ---
 const logoPath = "/logo/tech_logo_camilo_a_falla.svg";
-import "../styles/global.css"
+const picmePath = "/Camilo-Falla.jpg";
+import "../styles/global.css";
 ---
 
-<header class="max-w-[1440px] mx-auto p-4 flex justify-between items-center bg-background border-b border-gray-300">
-    <!-- Logo SVG a la izquierda -->
+<header class="fixed top-0 left-0 w-full bg-background border-b border-gray-300 z-50">
+  <div class="max-w-[1440px] mx-auto p-4 flex justify-between items-center">
+    <!-- Logo -->
     <div class="w-auto h-[30px]">
-        <img src={logoPath} alt="Camilo A Falla Logo" class="logo-image w-[150px] max-w-full h-auto" />
+      <img src={logoPath} alt="Camilo A Falla Logo" class="logo-image w-[150px] max-w-full h-auto" />
     </div>
 
-    <!-- Menú de navegación en el centro -->
-    <nav class="nav hidden md:flex gap-3 items-center">
-        <a href="#about" class="text-info hover:text-secondary no-underline font-bold">About Me</a>
-        <a href="#portfolio" class="text-info hover:text-secondary no-underline font-bold">Portfolio</a>
-        <a href="#experience" class="text-info hover:text-secondary no-underline font-bold">Experience</a>
+    <!-- Menú de navegación -->
+    <nav class="hidden md:flex gap-3 items-center">
+      <a href="#about" class="text-info hover:text-secondary font-bold">About Me</a>
+      <a href="#projects" class="text-info hover:text-secondary font-bold">Portfolio</a>
+      <a href="#experience" class="text-info hover:text-secondary font-bold">Experience</a>
     </nav>
 
-    <!-- Botones de contacto a la derecha -->
-    <div class="contact-buttons hidden md:flex gap-2 items-center">
-        <a href="#contact" class="text-sm font-semibold bg-primary hover:saturate-200 transition text-white rounded-full px-4 py-1">Contact Me</a>
-
-        <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline mb-2 transition duration-300">
-            <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
-            <span></span>
-        </a>
+    <!-- Botones de contacto -->
+    <div class="hidden md:flex gap-2 items-center">
+      <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline transition">
+        <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
+      </a>
+      <button
+        id="open-modal"
+        class="text-sm font-semibold bg-primary hover:saturate-200 text-white rounded-full px-4 py-1"
+      >
+        Contact Me
+      </button>
     </div>
 
-    <!-- Menú hamburguesa para dispositivos móviles -->
-    <div
-        id="hamburger-menu"
-        class="md:hidden flex flex-col gap-1 cursor-pointer"
-        onclick="toggleMenu()"
-    >
-        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
-        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
-        <span class="block w-8 h-0.5 bg-gray-700 my-0.5"></span>
+    <!-- Menú hamburguesa -->
+    <div id="hamburger-menu" class="md:hidden flex flex-col gap-1 cursor-pointer z-50">
+      <span class="block w-8 h-0.5 bg-gray-700"></span>
+      <span class="block w-8 h-0.5 bg-gray-700"></span>
+      <span class="block w-8 h-0.5 bg-gray-700"></span>
     </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden fixed top-16 left-0 w-full bg-white shadow-lg p-4 z-50"
+  >
+    <nav class="flex flex-col gap-4">
+      <a href="#about" class="text-info hover:text-secondary font-bold">About Me</a>
+      <a href="#projects" class="text-info hover:text-secondary font-bold">Portfolio</a>
+      <a href="#experience" class="text-info hover:text-secondary font-bold">Experience</a>
+      <button
+        id="open-modal-mobile"
+        class="text-sm font-semibold bg-primary hover:saturate-200 text-white rounded-full px-4 py-1"
+      >
+        Contact Me
+      </button>
+      <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline">
+        <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
+      </a>
+    </nav>
+  </div>
 </header>
 
-<!-- Menú móvil -->
+<!-- Modal -->
 <div
-    id="mobile-menu"
-    class="hidden md:hidden absolute top-16 left-0 w-full bg-white shadow-lg p-4"
+  id="contact-modal"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
 >
-    <nav class="flex flex-col gap-4">
-        <a href="#about" class="text-info hover:text-secondary no-underline font-bold cursor-pointer">About Me</a>
-        <a href="#portfolio" class="text-info hover:text-secondary no-underline font-bold">Portfolio</a>
-        <a href="#experience" class="text-info hover:text-secondary no-underline font-bold">Experience</a>
-        <a href="#contact" class="text-info hover:text-secondary no-underline font-bold">Contact Me</a>
-        <a href="https://wa.me/+573114935020" class="flex items-center text-blue-700 hover:underline mb-2 transition duration-300">
-            <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
-            <span></span>
-        </a>
-    </nav>
+  <div class="bg-white rounded-lg w-full max-w-4xl p-4 md:p-8 relative">
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none text-2xl"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col md:flex-row ml-12 mr-12 gap-8 justify-center items-center">
+        <!-- Información de contacto -->
+        <div class="text-gray-700 text-center md:text-left">
+          <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+          <p>Name: Camilo Falla</p>
+          <p>Email: <a href="mailto:camiloafalla@gmail.com" class="text-primary hover:underline">camiloafalla@gmail.com</a></p>
+          <p>Phone: <a href="tel:+573114935020" class="text-primary hover:underline">+57 311 493 5020</a></p>
+          <p>
+            <a href="https://wa.me/+573114935020" class="flex items-center justify-center md:justify-start text-blue-700 hover:underline">
+              <img src="/icono/whatsapp-icon.png" alt="WhatsApp" class="h-6 w-6 mr-2" />
+              WhatsApp
+            </a>
+          </p>
+        </div>
+      
+        <!-- Imagen con borde verde -->
+        <div class="w-auto h-auto">
+          <img src={picmePath} alt="Camilo A Falla pic" class="logo-image w-[150px] max-w-full h-auto border-4 border-myborder rounded-full object-cover object-top" />
+        </div>
+    </div>
+      
+    
+  </div>
 </div>
 
-<!-- Script para manejar el menú hamburguesa -->
-<script client:load>
-    function toggleMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        mobileMenu.classList.toggle("hidden");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("contact-modal");
+    const openModalButtons = document.querySelectorAll("#open-modal, #open-modal-mobile");
+    const closeModal = document.getElementById("close-modal");
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (modal) {
+      if (openModalButtons) {
+        openModalButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+          });
+        });
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener("click", () => {
+          modal.classList.add("hidden");
+        });
+      }
+
+      // Cerrar modal al hacer clic fuera del contenido
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+    } else {
+      console.error("El elemento modal no existe en el DOM.");
     }
+
+    if (hamburgerMenu && mobileMenu) {
+      hamburgerMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
 </script>

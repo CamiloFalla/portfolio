@@ -16,10 +16,14 @@ module.exports = {
         muted: '#34495e',
         warning: '#7b241c',
         success: '#1d8348',
-        info: '#212f3d'
+        info: '#212f3d',
+        myborder: '#145a32'
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
+      },
+      backgroundImage: {
+        heroPattern: 'url(/images/hero-pattern.jpg)',
       },
     },
   },

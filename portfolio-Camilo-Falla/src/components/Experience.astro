@@ -1,0 +1,56 @@
+---
+// src/components/Experience.astro
+const experiences = [
+  {
+    title: "Web Developer & Cloud Solutions Architect",
+    company: "Freelance",
+    startDate: "Octubre - 2024",
+    endDate: "",
+    description: "focusing on building modern web applications and reliable cloud infrastructures. With skills in frameworks like React and Astro, along with experience in WordPress customization, I offer practical solutions for creating and improving websites to fit your needs. I handle both frontend development and backend integration, aiming for smooth performance and user-friendly design. On the cloud side, I work with AWS and Azure to help set up or improve secure, scalable architectures that match project requirements and budgets. Whether you’re looking to build a dynamic website, move your applications to the cloud, or set up a reliable infrastructure, I’m here to help with a straightforward and results-driven approach.",
+  },
+  {
+    title: "Desarrollador experiencias digitales Junior",
+    company: "i2 Sistemas y Seguridad Informática Ltda.",
+    startDate: "Agosto - 2024",
+    endDate: "Diciembre - 2024",
+    description: "Encargado de desarrollar proyecto especifico página web landing page, tanto en WordPress como la implementación de desarrollo de nuevas tecnologías como Astro, esto con el fin de conectar una página moderna e internacional que permita alcanzar mercados y dar una perspectiva global. Contrato específico para el proyecto.",
+  },
+  {
+    title: "Coordinador Mantenimiento Medición",
+    company: "VANTI ESP S.A.",
+    startDate: "Junio - 2023",
+    endDate: "Febrero - 2024",
+    description: "A cargo de gestionar la medición en Colombia, control de data y análisis de indicadores bajo métodos estadísticos, tanto para los puntos de transferencia, los sistemas de regulación así como el suministro para todos los mercados, cumpliendo la normatividad vigente, a través de un equipo de técnicos de 20 personas y contratistas, garantizando el cumplimiento del plan de trabajo, soporte de todos los requisitos de las áreas y generando valor en la eficiencia de procesos, el cumplimiento de objetivos y en la mejora continua.",
+  },
+  {
+    title: "Jefe de Mantenimiento",
+    company: "Syntofarma S.A.",
+    startDate: "Septiembre 2022",
+    endDate: "Mayo - 2023",
+    description: "Responsable de la disponibilidad de los equipos para producción de medicamentos en planta y de apoyo crítico para las plantas Penicilina y Cefalosporinas y bodegas, esto en el marco de las buenas prácticas de manufactura, cumplimiento de regulaciones para el INVIMA, con un equipo de 25 personas directos y contratistas.",
+  },
+  {
+    title: "Ingeniero de Ventas y Soporte Técnico",
+    company: "ABAC Ingeniería S.A.",
+    startDate: "Noviembre - 2021",
+    endDate: "Agosto - 2022",
+    description: "Responsable de atender la zona industrial de Cundinamarca y Boyacá, en la oferta y postventa de equipos de bombeo y agitación de acuerdo a las representaciones de la compañía, lo cual requiere un entendimiento de las aplicaciones de los clientes y la selección y acompañamiento para garantizar soluciones integrales.",
+  },
+];
+---
+
+<section id="experience" class="py-16 bg-white">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Experiencia Laboral</h2>
+    <div class="space-y-6">
+      {experiences.map((job) => (
+        <div class="border-l-4 border-primary pl-4">
+          <h3 class="text-xl font-semibold">{job.title}</h3>
+          <p class="text-gray-600">{job.company}</p>
+          <p class="text-sm text-gray-500">{job.startDate} - {job.endDate}</p>
+          <p class="mt-2 text-gray-700">{job.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+// src/components/Study.astro
+const studies = [
+  {
+    degree: "Ingeniería de Software",
+    institution: "Politécnico Grancolombiano",
+    year: "Grado Marzo 2025",
+  },
+  {
+    degree: "Bootcamp Arquitectura en la Nube Nivel Avanzado 159 hr",
+    institution: "Mintic TalentoTech Bogotá",
+    year: "Octubre - 2024",
+  },
+  {
+    degree: "Frontend UX 80 hr",
+    institution: "Cymetria",
+    year: "Octubre - 2024",
+  },
+  {
+    degree: "Dilomado Misión TIC Programación Web 600 hr",
+    institution: "Universidad Nacional de Colombia",
+    year: "Octubre - 2022",
+  },
+  {
+    degree: "Ingeniero Mecánico",
+    institution: "Universidad Nacional de Colombia",
+    year: "Agosto - 2005",
+  },
+];
+---
+
+<section id="studies" class="py-16 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Estudios</h2>
+    <ul class="list-disc list-inside">
+      {studies.map((study) => (
+        <li class="mb-2">
+          <span class="font-bold">{study.degree}</span> - {study.institution} ({study.year})
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
